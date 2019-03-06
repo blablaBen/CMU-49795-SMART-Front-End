@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ShopperQueryComponent } from './shopper/shopper-query/shopper-query.component';
 
 const appRoutes: Routes = [
-  { path: 'shopper-query', component: ShopperQueryComponent },
+  { path: 'shopper/shopper-query', component: ShopperQueryComponent },
 ];
 
 @NgModule({
@@ -17,6 +17,10 @@ const appRoutes: Routes = [
     ShopperQueryComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     BrowserModule,
     FormsModule,
     HttpModule
